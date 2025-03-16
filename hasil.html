@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Ujian</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-pencil-alt"></i> Hasil Ujian</h1>
+    <div id="hasil">
+      <!-- Hasil ujian akan ditampilkan di sini -->
+    </div>
+    <button id="ulangi">Ulangi Ujian</button>
+  </div>
+
+  <script>
+    // Ambil skor dari localStorage
+    const skor = localStorage.getItem("skor");
+    const totalSoal = localStorage.getItem("totalSoal");
+
+    // Tampilkan hasil ujian
+    const hasilElement = document.getElementById("hasil");
+    hasilElement.innerHTML = `
+      <div class="hasil-box">
+        <h2>Hasil Ujian</h2>
+        <p>Skor Anda: <strong>${skor} dari ${totalSoal} soal</strong></p>
+      </div>
+    `;
+
+    // Tombol Ulangi
+    document.getElementById("ulangi").addEventListener("click", function () {
+      window.location.href = "index.html"; // Kembali ke halaman ujian
+    });
+  </script>
+</body>
+</html>
