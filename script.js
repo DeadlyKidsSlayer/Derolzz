@@ -45,6 +45,7 @@ const mulaiUjianButton = document.getElementById("mulai-ujian");
 const sebelumUjian = document.getElementById("sebelum-ujian");
 const saatUjian = document.getElementById("saat-ujian");
 const ulangiUjianButton = document.getElementById("ulangi-ujian");
+const timerElement = document.getElementById("timer").querySelector("span");
 
 // Ambil elemen audio dan tombol kontrol musik
 const backsound = document.getElementById("backsound");
@@ -53,6 +54,8 @@ const toggleMusicButton = document.getElementById("toggle-music");
 let soalAktif = 1; // Nomor soal yang sedang aktif
 let jawabanPengguna = {}; // Menyimpan jawaban pengguna
 let isMusicPlaying = true; // Status musik (aktif/non-aktif)
+let waktuUjian = 0.5 * 60; // Waktu ujian dalam detik (30 detik)
+let timerInterval; // Interval untuk timer
 
 // Fungsi untuk mengontrol musik
 function toggleMusic() {
@@ -152,10 +155,33 @@ mulaiUjianButton.addEventListener("click", () => {
   backsound.pause(); // Hentikan musik saat ujian dimulai
   isMusicPlaying = false; // Update status musik
   toggleMusicButton.innerHTML = '<i class="fas fa-music"></i> Nyalakan Musik'; // Update teks tombol
+  startTimer(); // Mulai timer
 });
+
+// Fungsi untuk memulai timer
+function startTimer() {
+  timerInterval = setInterval(() => {
+    waktuUjian--; // Kurangi waktu ujian
+    timerElement.textContent = formatTime(waktuUjian); // Update tampilan timer
+
+    // Jika waktu habis, hentikan timer dan tampilkan hasil
+    if (waktuUjian <= 0) {
+      clearInterval(timerInterval);
+      tampilkanHasilUjian();
+    }
+  }, 1000); // Update setiap 1 detik
+}
+
+// Fungsi untuk memformat waktu (MM:SS)
+function formatTime(detik) {
+  const menit = Math.floor(detik / 60);
+  const sisaDetik = detik % 60;
+  return `${menit.toString().padStart(2, "0")}:${sisaDetik.toString().padStart(2, "0")}`;
+}
 
 // Tombol "Selesaikan Ujian"
 tombolSelesaikan.addEventListener("click", () => {
+  clearInterval(timerInterval); // Hentikan timer
   hitungHasilUjian(); // Hitung hasil ujian
   tampilkanHasilUjian(); // Tampilkan halaman hasil ujian
 });
@@ -206,6 +232,10 @@ ulangiUjianButton.addEventListener("click", () => {
   backsound.play(); // Putar musik
   isMusicPlaying = true; // Update status musik
   toggleMusicButton.innerHTML = '<i class="fas fa-music"></i> Matikan Musik'; // Update teks tombol
+  // Reset timer
+  waktuUjian = 0.5 * 60; // Reset waktu ujian ke 30 detik
+  timerElement.textContent = formatTime(waktuUjian); // Update tampilan timer
+  clearInterval(timerInterval); // Hentikan timer jika sedang berjalan
 });
 
 // Inisialisasi
