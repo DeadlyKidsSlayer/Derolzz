@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try Out Psikotes Polri</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Kolom Nomor Soal di Kiri -->
+    <div class="kolom-nomor-soal" id="kolom-nomor-soal" style="display: none;">
+      <h3><i class="fas fa-list-ol"></i> Daftar Soal</h3>
+      <ul id="daftar-nomor-soal">
+        <!-- Nomor soal akan diisi oleh JavaScript -->
+      </ul>
+    </div>
+
+    <!-- Konten Ujian di Kanan -->
+    <div class="konten-ujian">
+      <!-- Halaman Awal -->
+      <div id="sebelum-ujian">
+        <div class="header-ujian">
+          <img src="Lambang_Polri.png" alt="Lambang_Polri.png" class="Lambang_Polri.png">
+          <h1>Try Out Psikotes Polri</h1>
+        </div>
+        <div class="info-ujian">
+          <p>Waktu Pengerjaan: <span id="waktu-diberikan">00:30</span></p>
+          <button id="mulai-ujian"><i class="fas fa-play"></i> Mulai Ujian</button>
+          <!-- Tombol Kontrol Musik -->
+          <button id="toggle-music"><i class="fas fa-music"></i> Matikan Musik</button>
+        </div>
+      </div>
+
+      <!-- Halaman Pengerjaan Ujian -->
+      <div id="saat-ujian" style="display: none;">
+        <div id="timer"><i class="fas fa-clock"></i> Waktu: <span>00:30</span></div>
+        <div id="soal-container">
+          <!-- Soal akan diisi oleh JavaScript -->
+        </div>
+        <!-- Tombol Navigasi -->
+        <div class="navigasi-soal">
+          <button id="sebelumnya"><i class="fas fa-arrow-left"></i> Sebelumnya</button>
+          <button id="selanjutnya">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+          <button id="selesaikan-ujian"><i class="fas fa-check-circle"></i> Selesaikan Ujian</button>
+        </div>
+      </div>
+
+      <!-- Halaman Hasil Ujian -->
+      <div id="hasil-ujian" style="display: none;">
+        <h2><i class="fas fa-trophy"></i> Hasil Try Out</h2>
+        <div class="hasil-box">
+          <p>Total Jawaban Benar: <span id="total-benar">0</span></p>
+          <p>Total Jawaban Salah: <span id="total-salah">0</span></p>
+          <p>Nilai: <span id="nilai">0</span></p>
+        </div>
+        <p id="motivasi"></p>
+        <button id="ulangi-ujian"><i class="fas fa-redo"></i> Ulangi Ujian</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemen Audio untuk Backsound -->
+  <audio id="backsound" loop autoplay muted>
+    <source src="backsound.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
