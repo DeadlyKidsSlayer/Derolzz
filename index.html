@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try Out Psikotes Polri</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Pesan Selamat Datang -->
+  <div id="pesan-selamat-datang">
+    <div class="pesan-box">
+      <h2>Selamat Datang!</h2>
+      <p>Selamat datang di laman try out berbasis komputer ini. Jika Anda mengalami kendala pada saat mengerjakan soal, harap menghubungi pengembang laman ini. Terima kasih dan selamat bekerja! ;D</p>
+      <button id="lanjutkan">Lanjutkan</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Kolom Nomor Soal di Kiri -->
+    <div class="kolom-nomor-soal" id="kolom-nomor-soal">
+      <h3><i class="fas fa-list-ol"></i> Daftar Soal</h3>
+      <ul id="daftar-nomor-soal">
+        <!-- Nomor soal akan diisi oleh JavaScript -->
+      </ul>
+    </div>
+
+    <!-- Konten Ujian di Kanan -->
+    <div class="konten-ujian">
+      <!-- Halaman Awal -->
+      <div id="sebelum-ujian">
+        <div class="header-ujian">
+          <img src="Lambang_polri.png" alt="Lambang Polri" class="logo-polri">
+          <h1>Try Out Psikotes Polri</h1>
+        </div>
+        <div class="info-ujian">
+          <p>Waktu Pengerjaan: <span id="waktu-diberikan">00:30</span></p>
+          <!-- Logo Instagram, TikTok, dan Facebook -->
+          <div class="social-media">
+            <a href="https://instagram.com/mdroland_" target="_blank">
+              <i class="fab fa-instagram"></i> <!-- Logo Instagram -->
+            </a>
+            <a href="https://tiktok.com/@mdroland_" target="_blank">
+              <i class="fab fa-tiktok"></i> <!-- Logo TikTok -->
+            </a>
+            <a href="https://facebook.com/mdroland_" target="_blank">
+              <i class="fab fa-facebook"></i> <!-- Logo Facebook -->
+            </a>
+          </div>
+          <button id="mulai-ujian"><i class="fas fa-play"></i> Mulai Ujian</button>
+          <!-- Tombol Kontrol Musik (Hanya Ikon) -->
+          <button id="toggle-music">
+            <i class="fas fa-volume-up"></i> <!-- Ikon musik nyala -->
+          </button>
+        </div>
+      </div>
+
+      <!-- Halaman Pengerjaan Ujian -->
+      <div id="saat-ujian">
+        <div id="timer"><i class="fas fa-clock"></i> Waktu: <span>00:30</span></div>
+        <!-- Informasi Soal -->
+        <div id="info-soal">
+          Soal ke <span id="nomor-soal-aktif">1</span> dari <span id="total-soal">10</span>
+        </div>
+        <div id="soal-container">
+          <!-- Soal akan diisi oleh JavaScript -->
+        </div>
+        <!-- Tombol Navigasi -->
+        <div class="navigasi-soal">
+          <button id="sebelumnya"><i class="fas fa-arrow-left"></i> Sebelumnya</button>
+          <button id="selanjutnya">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+          <button id="selesaikan-ujian"><i class="fas fa-check-circle"></i> Selesaikan Ujian</button>
+        </div>
+      </div>
+
+      <!-- Halaman Hasil Ujian -->
+      <div id="hasil-ujian">
+        <h2><i class="fas fa-trophy"></i> Hasil Ujian</h2>
+        <div class="hasil-box">
+          <p>Total Jawaban Benar: <span id="total-benar">0</span></p>
+          <p>Total Jawaban Salah: <span id="total-salah">0</span></p>
+          <p>Nilai: <span id="nilai">0</span></p>
+        </div>
+        <p id="motivasi"></p>
+        <button id="ulangi-ujian"><i class="fas fa-redo"></i> Ulangi Ujian</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemen Audio untuk Backsound -->
+  <audio id="backsound" loop autoplay muted>
+    <source src="backsound.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
