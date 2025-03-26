@@ -1,0 +1,567 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pesan Selamat Datang */
+#pesan-selamat-datang {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pesan-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pesan-box h2 {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.pesan-box p {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.pesan-box button {
+  background: linear-gradient(45deg, #ff6f61, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pesan-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+/* Kolom Nomor Soal */
+.kolom-nomor-soal {
+  width: 30%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+.kolom-nomor-soal h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.kolom-nomor-soal h3 i {
+  margin-right: 10px;
+}
+
+.kolom-nomor-soal ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.kolom-nomor-soal ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.kolom-nomor-soal ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.kolom-nomor-soal ul li.active {
+  background: #ffd700;
+  color: #003366;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.kolom-nomor-soal ul li.answered {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Konten Ujian */
+.konten-ujian {
+  width: 80%;
+  padding: 20px;
+}
+
+/* Halaman Awal (Sebelum Ujian) */
+#sebelum-ujian {
+  text-align: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.header-ujian {
+  margin-bottom: 30px;
+}
+
+.header-ujian .logo-polri {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.header-ujian h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin: 0;
+}
+
+.info-sesi {
+  font-size: 1.1em;
+  color: #ffd700;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.info-ujian p {
+  font-size: 1.2em;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+#mulai-ujian {
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mulai-ujian:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+#mulai-ujian i {
+  margin-right: 10px;
+}
+
+/* Tombol Musik */
+#toggle-music {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toggle-music:hover {
+  transform: scale(1.1);
+}
+
+#toggle-music:active {
+  transform: scale(0.9);
+}
+
+/* Styling untuk media sosial */
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-media a {
+  color: white;
+  font-size: 1.5em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.2);
+  color: #ff6f61;
+}
+
+.social-media a[href*="instagram.com"]:hover {
+  color: #e4405f;
+}
+
+.social-media a[href*="tiktok.com"]:hover {
+  color: #000000;
+}
+
+.social-media a[href*="facebook.com"]:hover {
+  color: #1877f2;
+}
+
+/* Halaman Pengerjaan Ujian */
+#saat-ujian {
+  display: none;
+}
+
+#timer {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+#info-sesi-aktif {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #ffd700;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+#timer i {
+  margin-right: 10px;
+  color: #ffd700;
+}
+
+#info-soal {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#soal-container {
+  margin-bottom: 20px;
+}
+
+.soal {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.soal p {
+  font-size: 1.1em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.soal label {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.soal label:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Tombol Navigasi */
+.navigasi-soal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigasi-soal button {
+  background: linear-gradient(45deg, #003366, #002244);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.navigasi-soal button i {
+  margin: 0 5px;
+}
+
+.navigasi-soal button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.4);
+}
+
+.navigasi-soal button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Tampilan Hasil Ujian Minimalis */
+#hasil-ujian {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.hasil-box {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hasil-sukses {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.nilai-label {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.nilai-angka {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #2e86de;
+  margin: 15px 0;
+  display: block;
+}
+
+#motivasi {
+  font-style: italic;
+  color: #666;
+  margin-top: 25px;
+  font-size: 1.1em;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+#ulangi-ujian {
+  margin-top: 30px;
+  background: #2e86de;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+#ulangi-ujian:hover {
+  background: #1a6fd0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 134, 222, 0.4);
+}
+
+/* Tampilan Tunggu Sesi */
+#tunggu-sesi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tunggu-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tunggu-box h2 {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.tunggu-box p {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 3em;
+  color: #ffd700;
+  margin: 20px 0;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Styles untuk Handphone */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .kolom-nomor-soal {
+    width: 100%;
+    padding: 10px;
+    display: none;
+  }
+
+  .konten-ujian {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .header-ujian h1 {
+    font-size: 1.8em;
+  }
+
+  .info-sesi {
+    font-size: 0.9em;
+  }
+
+  .info-ujian p {
+    font-size: 1em;
+  }
+
+  #mulai-ujian {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  #timer, #info-sesi-aktif {
+    font-size: 1em;
+    padding: 6px 12px;
+  }
+
+  .soal p {
+    font-size: 1em;
+  }
+
+  .soal label {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .navigasi-soal button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .hasil-box {
+    padding: 20px;
+  }
+
+  .hasil-sukses {
+    font-size: 1.3em;
+  }
+
+  .nilai-angka {
+    font-size: 2.5em;
+  }
+
+  #motivasi {
+    font-size: 1em;
+  }
+
+  #ulangi-ujian {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
