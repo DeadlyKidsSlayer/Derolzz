@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try Out Psikotes Polri</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Pesan Selamat Datang -->
+  <div id="pesan-selamat-datang">
+    <div class="pesan-box">
+      <h2>Selamat Datang!</h2>
+      <p>Selamat datang di laman try out berbasis komputer ini. Jika Anda mengalami kendala pada saat mengerjakan soal, harap menghubungi pengembang laman ini. Terima kasih dan selamat bekerja! ;D</p>
+      <button id="lanjutkan">Lanjutkan</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Kolom Nomor Soal di Kiri -->
+    <div class="kolom-nomor-soal" id="kolom-nomor-soal">
+      <h3><i class="fas fa-list-ol"></i> Daftar Soal</h3>
+      <ul id="daftar-nomor-soal">
+        <!-- Nomor soal akan diisi oleh JavaScript -->
+      </ul>
+    </div>
+
+    <!-- Konten Ujian di Kanan -->
+    <div class="konten-ujian">
+      <!-- Halaman Awal -->
+      <div id="sebelum-ujian">
+        <div class="header-ujian">
+          <img src="Lambang_polri.png" alt="Lambang Polri" class="logo-polri">
+          <h1>Try Out Psikotes Polri</h1>
+          <p class="info-sesi">Total Sesi : 4 | Waktu per Sesi : 30 detik</p>
+        </div>
+        <div class="info-ujian">
+          <p>Waktu Pengerjaan : <span id="waktu-diberikan">00:30</span> per sesi</p>
+          <!-- Logo Instagram, TikTok, dan Facebook -->
+          <div class="social-media">
+            <a href="https://instagram.com/mdroland__" target="_blank">
+              <i class="fab fa-instagram"></i> <!-- Logo Instagram -->
+            </a>
+            <a href="https://www.tiktok.com/@olaanddd?_t=ZS-8us0YZcieoq&_r=1" target="_blank">
+              <i class="fab fa-tiktok"></i> <!-- Logo TikTok -->
+            </a>
+            <a href="https://www.facebook.com/share/1MT14hLxRG/?mibextid=wwXIfr" target="_blank">
+              <i class="fab fa-facebook"></i> <!-- Logo Facebook -->
+            </a>
+          </div>
+          <button id="mulai-ujian"><i class="fas fa-play"></i> Mulai Ujian</button>
+          <!-- Tombol Kontrol Musik (Hanya Ikon) -->
+          <button id="toggle-music">
+            <i class="fas fa-volume-up"></i> <!-- Ikon musik nyala -->
+          </button>
+        </div>
+      </div>
+
+      <!-- Halaman Pengerjaan Ujian -->
+      <div id="saat-ujian">
+        <div id="timer"><i class="fas fa-clock"></i> Waktu : <span>00:30</span></div>
+        <div id="info-sesi-aktif">Sesi : <span> 1 </span> dari 4</div>
+        <!-- Informasi Soal -->
+        <div id="info-soal">
+          Soal ke <span id="nomor-soal-aktif">1</span> / <span id="total-soal">10</span>
+        </div>
+        <div id="soal-container">
+          <!-- Soal akan diisi oleh JavaScript -->
+        </div>
+        <!-- Tombol Navigasi -->
+        <div class="navigasi-soal">
+          <button id="sebelumnya"><i class="fas fa-arrow-left"></i> Sebelumnya</button>
+          <button id="selanjutnya">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+          <button id="selesaikan-ujian"><i class="fas fa-check-circle"></i> Selesaikan Ujian</button>
+        </div>
+      </div>
+
+      <!-- Halaman Hasil Ujian -->
+      <div id="hasil-ujian">
+        <div class="hasil-box">
+          <!-- Konten hasil akan diisi oleh JavaScript -->
+        </div>
+        <p id="motivasi"></p>
+        <button id="lihat-pembahasan"><i class="fas fa-book-open"></i> Lihat Pembahasan</button>
+        <button id="ulangi-ujian"><i class="fas fa-redo"></i> Ulangi Ujian</button>
+        
+        <!-- Container untuk pembahasan soal -->
+        <div id="pembahasan-container" style="display: none;">
+          <h3>Pembahasan Soal</h3>
+          <div id="daftar-pembahasan"></div>
+        </div>
+      </div>
+
+      <!-- Halaman Tunggu Antar Sesi -->
+      <div id="tunggu-sesi">
+        <div class="tunggu-box">
+          <h2>Sesi Berikutnya Akan Dimulai</h2>
+          <div id="countdown">3</div>
+          <p>Bersiaplah untuk sesi berikutnya!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemen Audio untuk Backsound -->
+  <audio id="backsound" loop autoplay muted>
+    <source src="backsound.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
